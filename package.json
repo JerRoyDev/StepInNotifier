@@ -1,0 +1,20 @@
+{
+  "name": "StepInNotifier",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Monitor for Step In subscription changes",
+  "dependencies": {
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.7",
+    "fs-extra": "^11.2.0",
+    "node-schedule": "^2.1.1",
+    "nodemailer": "^6.10.0"
+  }
+}

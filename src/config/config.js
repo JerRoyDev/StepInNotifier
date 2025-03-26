@@ -1,12 +1,13 @@
+require('dotenv').config();
+
 // Configuration settings for the application
 module.exports = {
   // API endpoint for Step In subscriptions
-  apiEndpoint:
-    'https://stepin.brpsystems.com/brponline/api/ver3/products/subscriptions',
+  apiEndpoint: process.env.STEPIN_API_ENDPOINT,
 
-  // Query parameters
+  // Query parameters for filtering subscriptions
   queryParams: {
-    businessUnit: '2612',
+    businessUnit: process.env.STEPIN_BUSINESS_UNIT_ID || '2612',
     webCategory: '2',
   },
 
@@ -15,11 +16,11 @@ module.exports = {
 
   // Email settings
   email: {
-    enabled: true,
+    dailyLimit: 50,
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
     smtp: {
-      host: 'smtp-relay.brevo.com',
+      host: process.env.BREVO_SMTP_HOST,
       port: 587,
       secure: false,
       auth: {

@@ -29,8 +29,25 @@ const sendEmail = async (data) => {
       return;
     }
 
+    // Log what data was received for debugging
+    logger.info(
+      `Email data received - newSubscriptions: ${
+        data.newSubscriptions?.length || 0
+      }, removedSubscriptions: ${
+        data.removedSubscriptions?.length || 0
+      }, priceChanges: ${data.priceChanges?.length || 0}`
+    );
+
+    if (data.newSubscriptions?.length > 0) {
+      logger.info(
+        `New subscription IDs to include in email: ${data.newSubscriptions
+          .map((s) => s.id)
+          .join(', ')}`
+      );
+    }
+
     const transporter = nodemailer.createTransport({
-      host: 'smtp-relay.brevo.com',
+      host: process.env.BREVO_SMTP_HOST,
       port: 587,
       secure: false,
       auth: {
@@ -54,9 +71,12 @@ const sendEmail = async (data) => {
       emailContent = '<h2>Step In Subscription Changes Detected</h2>';
       emailContent += `<p>Generated at: ${new Date().toLocaleString()}</p>`;
 
-      if (changes.newSubscriptions.length > 0) {
+      if (changes.newSubscriptions && changes.newSubscriptions.length > 0) {
         emailContent += '<h3>New Subscriptions:</h3><ul>';
         changes.newSubscriptions.forEach((sub) => {
+          logger.info(
+            `Adding new subscription to email: ${sub.name} (ID: ${sub.id})`
+          );
           emailContent += `<li>${sub.name} (ID: ${sub.id}) - ${formatPrice(
             sub.priceWithInterval.price.amount
           )} ${sub.priceWithInterval.price.currency}</li>`;
@@ -64,9 +84,15 @@ const sendEmail = async (data) => {
         emailContent += '</ul>';
       }
 
-      if (changes.removedSubscriptions.length > 0) {
+      if (
+        changes.removedSubscriptions &&
+        changes.removedSubscriptions.length > 0
+      ) {
         emailContent += '<h3>Removed Subscriptions:</h3><ul>';
         changes.removedSubscriptions.forEach((sub) => {
+          logger.info(
+            `Adding removed subscription to email: ${sub.name} (ID: ${sub.id})`
+          );
           emailContent += `<li>${sub.name} (ID: ${sub.id}) - ${formatPrice(
             sub.priceWithInterval.price.amount
           )} ${sub.priceWithInterval.price.currency}</li>`;
@@ -74,9 +100,12 @@ const sendEmail = async (data) => {
         emailContent += '</ul>';
       }
 
-      if (changes.priceChanges.length > 0) {
+      if (changes.priceChanges && changes.priceChanges.length > 0) {
         emailContent += '<h3>Price Changes:</h3><ul>';
         changes.priceChanges.forEach((change) => {
+          logger.info(
+            `Adding price change to email: ${change.name} (ID: ${change.id})`
+          );
           emailContent += `<li>${change.name} (ID: ${change.id}): ${formatPrice(
             change.oldPrice
           )} -> ${formatPrice(change.newPrice)} SEK</li>`;
@@ -85,9 +114,10 @@ const sendEmail = async (data) => {
       }
 
       if (
-        changes.newSubscriptions.length === 0 &&
-        changes.removedSubscriptions.length === 0 &&
-        changes.priceChanges.length === 0
+        (!changes.newSubscriptions || changes.newSubscriptions.length === 0) &&
+        (!changes.removedSubscriptions ||
+          changes.removedSubscriptions.length === 0) &&
+        (!changes.priceChanges || changes.priceChanges.length === 0)
       ) {
         emailContent += '<p>No changes detected.</p>';
       }

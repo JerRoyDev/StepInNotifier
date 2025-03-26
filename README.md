@@ -29,12 +29,19 @@ Detta projekt övervakar prenumerationer från Step In Back City och skickar e-p
    npm install
    ```
 
-3. Konfigurera miljövariabler genom att skapa en `.env`-fil:
+3. Konfigurera miljövariabler:
+
+   - Kopiera `.env.example` till en ny fil `.env`:
+     ```
+     cp .env.example .env
+     ```
+   - Öppna `.env` och uppdatera värdena med din faktiska konfiguration:
 
    ```
    # Brevo SMTP credentials
    BREVO_SMTP_USER=din-smtp-användare@smtp-brevo.com
    BREVO_SMTP_PASS=din-smtp-nyckel
+   BREVO_SMTP_HOST=smtp-relay.brevo.com
 
    # Email settings
    EMAIL_FROM=avsändare@exempel.com
@@ -42,15 +49,21 @@ Detta projekt övervakar prenumerationer från Step In Back City och skickar e-p
 
    # Admin email for error notifications
    EMAIL_ADMIN=admin@exempel.com
+
+   # Step In API settings
+   STEPIN_API_ENDPOINT=https://stepin.brpsystems.com/brponline/api/ver3/products/subscriptions
+   STEPIN_BUSINESS_UNIT_ID=2612
    ```
+
+   > **OBS!** Kommit aldrig `.env`-filen till versionshanteringen. Den innehåller känslig information.
 
 ## Konfiguration
 
 Projektet använder följande konfiguration (src/config/config.js):
 
-- **API-endpoint**: Konfiguration för Step In API
-- **Query-parametrar**: Filtreringsparametrar för API-anrop
-- **E-postkonfiguration**: SMTP-inställningar för Brevo
+- **API-endpoint**: Konfigureras via STEPIN_API_ENDPOINT miljövariabel
+- **Business Unit**: Konfigureras via STEPIN_BUSINESS_UNIT_ID miljövariabel (standard: 2612)
+- **E-postkonfiguration**: SMTP-inställningar konfigureras via miljövariabler
 - **Datalagringsplatser**: Var prenumerationsdata och statistik sparas
 
 ## Användning

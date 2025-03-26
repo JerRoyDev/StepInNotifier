@@ -168,6 +168,27 @@ const compareData = (currentData, previousData) => {
     }
   }
 
+  // Add debug logging to see what changes were detected
+  logger.info(`New subscriptions: ${changes.newSubscriptions.length}`);
+  logger.info(`Removed subscriptions: ${changes.removedSubscriptions.length}`);
+  logger.info(`Price changes: ${changes.priceChanges.length}`);
+
+  // Add detailed debug info
+  if (changes.newSubscriptions.length > 0) {
+    logger.info(
+      `New subscription IDs: ${changes.newSubscriptions
+        .map((s) => s.id)
+        .join(', ')}`
+    );
+  }
+  if (changes.removedSubscriptions.length > 0) {
+    logger.info(
+      `Removed subscription IDs: ${changes.removedSubscriptions
+        .map((s) => s.id)
+        .join(', ')}`
+    );
+  }
+
   return changes;
 };
 
@@ -181,10 +202,21 @@ async function checkForChanges() {
 
     const currentData = await fetchSubscriptionData();
     const previousData = await loadPreviousData();
+
+    // Log the counts to help diagnose the issue
+    logger.info(`Current data count: ${currentData.length}`);
+    logger.info(`Previous data count: ${previousData.length}`);
+
     const changes = compareData(currentData, previousData);
 
-    if (Object.values(changes).some((arr) => arr.length > 0)) {
-      logger.info('Changes detected:', changes);
+    // Ensure there's some meaningful content before sending email
+    const hasChanges =
+      changes.newSubscriptions.length > 0 ||
+      changes.removedSubscriptions.length > 0 ||
+      changes.priceChanges.length > 0;
+
+    if (hasChanges) {
+      logger.info(`Changes detected - sending email notification`);
       await sendEmail(changes);
     } else {
       logger.info('No changes detected');

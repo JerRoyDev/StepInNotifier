@@ -19,8 +19,8 @@ Detta projekt övervakar prenumerationer från Step In Back City och skickar e-p
 1. Klona projektet:
 
    ```
-   git clone https://github.com/användare/StepInScrape.git
-   cd StepInScrape
+   git clone https://github.com/användare/StepInNotifier.git
+   cd StepInNotifier
    ```
 
 2. Installera beroenden:
@@ -76,7 +76,7 @@ Projektet är designat för att köras med Windows Task Scheduler:
 ## Projektstruktur
 
 ```
-StepInScrape/
+StepInNotifier/
 ├── src/
 │   ├── config/
 │   │   └── config.js         # Konfigurationsinställningar

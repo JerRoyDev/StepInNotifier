@@ -32,21 +32,19 @@ jobs:
       # Steg 4: Kör skriptet
       - name: Run StepIn check
         env:
-          # GitHub Secrets - måste konfigureras i repo settings
+          # GitHub Secrets (känslig data)
           GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
           GIST_ID: ${{ secrets.GIST_ID }}
-          
-          # StepIn API
-          STEPIN_API_ENDPOINT: ${{ secrets.STEPIN_API_ENDPOINT }}
-          STEPIN_BUSINESS_UNIT_ID: ${{ secrets.STEPIN_BUSINESS_UNIT_ID }}
-          
-          # Email settings (Brevo/Sendinblue)
-          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
-          EMAIL_TO: ${{ secrets.EMAIL_TO }}
-          EMAIL_ADMIN: ${{ secrets.EMAIL_ADMIN }}
-          BREVO_SMTP_HOST: ${{ secrets.BREVO_SMTP_HOST }}
           BREVO_SMTP_USER: ${{ secrets.BREVO_SMTP_USER }}
           BREVO_SMTP_PASS: ${{ secrets.BREVO_SMTP_PASS }}
+          
+          # GitHub Variables (konfiguration, icke-känslig)
+          STEPIN_API_ENDPOINT: ${{ vars.STEPIN_API_ENDPOINT }}
+          STEPIN_BUSINESS_UNIT_ID: ${{ vars.STEPIN_BUSINESS_UNIT_ID }}
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          EMAIL_TO: ${{ vars.EMAIL_TO }}
+          EMAIL_ADMIN: ${{ vars.EMAIL_ADMIN }}
+          BREVO_SMTP_HOST: ${{ vars.BREVO_SMTP_HOST }}
         run: npm start
       
       # Steg 5: Visa status efter körning

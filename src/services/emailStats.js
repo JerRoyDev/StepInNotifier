@@ -1,20 +1,19 @@
-const fs = require('fs').promises;
-const path = require('path');
 const logger = require('../utils/logger');
+const gistStorage = require('../storage/gistStorage');
 
-const STATS_FILE = path.join(__dirname, '../../data/emailStats.json');
 const DAILY_LIMIT = 50;
 
 /**
- * Loads email statistics from file
+ * Loads email statistics from Gist
  * @returns {Promise<Object>} Email statistics
  */
 const loadStats = async () => {
   try {
-    const data = await fs.readFile(STATS_FILE, 'utf8');
-    return JSON.parse(data);
+    const data = await gistStorage.readFile('emailStats.json');
+    return data;
   } catch (error) {
-    // If file doesn't exist or is invalid, return default stats
+    // If error occurs, return default stats
+    logger.error(`Failed to load email stats: ${error.message}`);
     return {
       lastReset: new Date().toISOString().split('T')[0],
       sentCount: 0,
@@ -23,12 +22,12 @@ const loadStats = async () => {
 };
 
 /**
- * Saves email statistics to file
+ * Saves email statistics to Gist
  * @param {Object} stats - Email statistics to save
  */
 const saveStats = async (stats) => {
   try {
-    await fs.writeFile(STATS_FILE, JSON.stringify(stats, null, 2));
+    await gistStorage.writeFile('emailStats.json', stats);
   } catch (error) {
     logger.error(`Failed to save email stats: ${error.message}`);
   }

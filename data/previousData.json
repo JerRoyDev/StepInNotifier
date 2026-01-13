@@ -1,1 +1,1207 @@
-[]
+[
+  {
+    "id": 6373,
+    "name": "Drop in - Step In",
+    "productNumber": "6358",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2686,
+        "name": "Step In Winternet",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2736,
+        "name": "Step In Björkskatan",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2807,
+        "name": "Step In Lycksele Centrum",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2840,
+        "name": "Step In Gammelstad",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2972,
+        "name": "Step In Porsön",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3014,
+        "name": "Step In Lycksele Norrmalm",
+        "location": "SE",
+        "companyNameForInvoice": "Friskvårdscenter Ansia AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Engångsträning\n-Giltig för engångsträning under samma datum som den köps\n-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Träna dygnet runt\n-Gäller på alla Step In anläggningar\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "85",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-1520x988.png",
+        "imageWidth": 1520,
+        "imageHeight": 988,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "85",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-1140x741.png",
+        "imageWidth": 1140,
+        "imageHeight": 741,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "85",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "85",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "85",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 49,
+        "focalPointY": 36
+      }
+    ],
+    "membershipLevel": "NO",
+    "givesMembership": false,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 15900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 900,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 15900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 6620,
+    "name": "1 Vecka - Step In",
+    "productNumber": "6605",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2686,
+        "name": "Step In Winternet",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2736,
+        "name": "Step In Björkskatan",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2807,
+        "name": "Step In Lycksele Centrum",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2840,
+        "name": "Step In Gammelstad",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2972,
+        "name": "Step In Porsön",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3014,
+        "name": "Step In Lycksele Norrmalm",
+        "location": "SE",
+        "companyNameForInvoice": "Friskvårdscenter Ansia AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Träna dygnet runt\n-Gäller på alla Step In anläggningar\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "86",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-1520x988.png",
+        "imageWidth": 1520,
+        "imageHeight": 988,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "86",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-1140x741.png",
+        "imageWidth": 1140,
+        "imageHeight": 741,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "86",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "86",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 49,
+        "focalPointY": 36
+      },
+      {
+        "reference": "86",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/1665fddf804047cfa608e7925f7a82d3-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 49,
+        "focalPointY": 36
+      }
+    ],
+    "membershipLevel": "NO",
+    "givesMembership": false,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 36900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 2089,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 36900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 7454,
+    "name": "Abonnemang Guld",
+    "productNumber": "7439",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Ingen bindningstid\n-Ingen uppsägningstid\n-Inga extra avgifter\n-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Gäller på alla Step In anläggningar\n-Träna dygnet runt\n-Kortet startar vid köptillfälle\n-Passerkort finns att köpa på anläggningarna (100kr)\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "108",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/d1142646003f4ef283da7ca08513b07e-1520x987.png",
+        "imageWidth": 1520,
+        "imageHeight": 987,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "108",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/d1142646003f4ef283da7ca08513b07e-1140x740.png",
+        "imageWidth": 1140,
+        "imageHeight": 740,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "108",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/d1142646003f4ef283da7ca08513b07e-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "108",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/d1142646003f4ef283da7ca08513b07e-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "108",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/d1142646003f4ef283da7ca08513b07e-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 50,
+        "focalPointY": 50
+      }
+    ],
+    "membershipLevel": "ALL",
+    "givesMembership": true,
+    "allowedToOrder": true,
+    "debitMethod": "RECURRING_CARD_PAYMENT",
+    "priceWithInterval": {
+      "interval": {
+        "numberOf": 1,
+        "unit": "MONTH"
+      },
+      "price": {
+        "amount": 52900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 2994,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 52900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 7576,
+    "name": "Halvårskort Guld ",
+    "productNumber": "7561",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2686,
+        "name": "Step In Winternet",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2736,
+        "name": "Step In Björkskatan",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2807,
+        "name": "Step In Lycksele Centrum",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2840,
+        "name": "Step In Gammelstad",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2972,
+        "name": "Step In Porsön",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3014,
+        "name": "Step In Lycksele Norrmalm",
+        "location": "SE",
+        "companyNameForInvoice": "Friskvårdscenter Ansia AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Gäller på alla Step In anläggningar\n-Träna dygnet runt\n-Passerkort finns att köpa på anläggningarna (100kr)\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "105",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/0b956a7d014246d988a9ca35507fe300-1520x987.png",
+        "imageWidth": 1520,
+        "imageHeight": 987,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "105",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/0b956a7d014246d988a9ca35507fe300-1140x740.png",
+        "imageWidth": 1140,
+        "imageHeight": 740,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "105",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/0b956a7d014246d988a9ca35507fe300-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "105",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/0b956a7d014246d988a9ca35507fe300-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "105",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/0b956a7d014246d988a9ca35507fe300-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 50,
+        "focalPointY": 50
+      }
+    ],
+    "membershipLevel": "ALL",
+    "givesMembership": true,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 369900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 20938,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 369900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 7575,
+    "name": "Kvartalskort Guld ",
+    "productNumber": "7560",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2686,
+        "name": "Step In Winternet",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2736,
+        "name": "Step In Björkskatan",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2807,
+        "name": "Step In Lycksele Centrum",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2840,
+        "name": "Step In Gammelstad",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2972,
+        "name": "Step In Porsön",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3014,
+        "name": "Step In Lycksele Norrmalm",
+        "location": "SE",
+        "companyNameForInvoice": "Friskvårdscenter Ansia AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Gäller på alla Step In anläggningar\n-Träna dygnet runt\n-Kortet startar vid köptillfälle\n-Passerkort finns att köpa på anläggningarna (100kr)\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "103",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cba9380353964463891c53b4b5b96a8a-1520x987.png",
+        "imageWidth": 1520,
+        "imageHeight": 987,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "103",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cba9380353964463891c53b4b5b96a8a-1140x740.png",
+        "imageWidth": 1140,
+        "imageHeight": 740,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "103",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cba9380353964463891c53b4b5b96a8a-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "103",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cba9380353964463891c53b4b5b96a8a-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "103",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cba9380353964463891c53b4b5b96a8a-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 50,
+        "focalPointY": 50
+      }
+    ],
+    "membershipLevel": "ALL",
+    "givesMembership": true,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 211900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 11994,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 211900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 6447,
+    "name": "1 Månad - Step In Guld",
+    "productNumber": "6432",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Träna dygnet runt\n-Gäller på alla Step In anläggningar\n-Passerkort finns att köpa till (100kr)\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "107",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cd004d7e3cf2463d89810da45e0399ea-1520x987.png",
+        "imageWidth": 1520,
+        "imageHeight": 987,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "107",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cd004d7e3cf2463d89810da45e0399ea-1140x740.png",
+        "imageWidth": 1140,
+        "imageHeight": 740,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "107",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cd004d7e3cf2463d89810da45e0399ea-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "107",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cd004d7e3cf2463d89810da45e0399ea-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "107",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/cd004d7e3cf2463d89810da45e0399ea-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 50,
+        "focalPointY": 50
+      }
+    ],
+    "membershipLevel": "NO",
+    "givesMembership": false,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 84900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 4806,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 84900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 5957,
+    "name": "Årskort Step In Guld",
+    "productNumber": "5943",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2840,
+        "name": "Step In Gammelstad",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2972,
+        "name": "Step In Porsön",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Träna dygnet runt\n-Gäller på alla Step In anläggningar\n-Passerkort finns att köpa till (100kr)\n-Betalning likställs med godkännande av avtal\n<a Här hittar du vårt medlemsavtal href=\"https://stepin.se/medlemsavtal/\"> <p>Medlemsavtal</p></a>",
+    "assets": [
+      {
+        "reference": "101",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-1520x987.png",
+        "imageWidth": 1520,
+        "imageHeight": 987,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "101",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-1140x740.png",
+        "imageWidth": 1140,
+        "imageHeight": 740,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "101",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "101",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "101",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 50,
+        "focalPointY": 50
+      }
+    ],
+    "membershipLevel": "ALL",
+    "givesMembership": true,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 579900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 32825,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 579900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  },
+  {
+    "id": 7851,
+    "name": "Kampanj -  Årskort Step In Guld 2026",
+    "productNumber": "7836",
+    "productLabels": [],
+    "businessUnits": [
+      {
+        "id": 2611,
+        "name": "Step In Furunäset",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2612,
+        "name": "Step In Backcity",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2736,
+        "name": "Step In Björkskatan",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2777,
+        "name": "Step In Skellefteå",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2807,
+        "name": "Step In Lycksele Centrum",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2840,
+        "name": "Step In Gammelstad",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 2972,
+        "name": "Step In Porsön",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3014,
+        "name": "Step In Lycksele Norrmalm",
+        "location": "SE",
+        "companyNameForInvoice": "Friskvårdscenter Ansia AB"
+      },
+      {
+        "id": 3138,
+        "name": "Step In Anderstorp",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      },
+      {
+        "id": 3154,
+        "name": "Step In Boden",
+        "location": "SE",
+        "companyNameForInvoice": "Step In AB"
+      }
+    ],
+    "description": "-800kr rabatt (ord.pris 5799:- )\n\n-Mobil inpassering via app (Go active! Leverantörskod: 028000)\n-Träna dygnet runt\n-Gäller på alla Step In anläggningar\n-Passerkort finns att köpa till (100kr)",
+    "assets": [
+      {
+        "reference": "176",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-1520x987.png",
+        "imageWidth": 1520,
+        "imageHeight": 987,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "176",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-1140x740.png",
+        "imageWidth": 1140,
+        "imageHeight": 740,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "176",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-760x494.png",
+        "imageWidth": 760,
+        "imageHeight": 494,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "176",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-380x247.png",
+        "imageWidth": 380,
+        "imageHeight": 247,
+        "focalPointX": 50,
+        "focalPointY": 50
+      },
+      {
+        "reference": "176",
+        "type": "MAIN",
+        "theme": null,
+        "contentType": "image/png",
+        "contentUrl": "https://storage.googleapis.com/brp-storage-service-assets/280/723cb2316f854a4ba371baa9ebfc0cb5-256x166.png",
+        "imageWidth": 256,
+        "imageHeight": 166,
+        "focalPointX": 50,
+        "focalPointY": 50
+      }
+    ],
+    "membershipLevel": "ALL",
+    "givesMembership": true,
+    "allowedToOrder": true,
+    "debitMethod": "MANUAL_DEBIT",
+    "priceWithInterval": {
+      "interval": null,
+      "price": {
+        "amount": 499900,
+        "currency": "SEK"
+      },
+      "vat": {
+        "amount": {
+          "amount": 28296,
+          "currency": "SEK"
+        },
+        "rate": "6"
+      }
+    },
+    "applicableCustomerTypes": [
+      {
+        "customerType": {
+          "id": 1,
+          "name": "Ordinarie"
+        },
+        "price": {
+          "amount": 499900,
+          "currency": "SEK"
+        }
+      }
+    ],
+    "userType": "SINGLE_USER"
+  }
+]

@@ -4,6 +4,28 @@
 
 Detta projekt övervakar prenumerationer från Step In Back City och skickar e-postaviseringar när ändringar upptäcks. Programmet kontrollerar nya prenumerationer, borttagna prenumerationer och prisändringar.
 
+## 🚀 Körning
+
+Projektet kan köras på två sätt:
+
+### Option 1: GitHub Actions (Rekommenderat)
+Kör automatiskt i molnet utan att din dator behöver vara på.
+
+**📖 [Fullständig GitHub Actions Setup Guide →](GITHUB_ACTIONS_SETUP.md)**
+
+**Fördelar:**
+- ✅ Kör 24/7 utan att din dator är på
+- ✅ Helt gratis
+- ✅ Automatisk schemaläggning
+- ✅ Fullständig logg-historik
+
+### Option 2: Lokalt med Windows Task Scheduler
+Traditionell lösning som kräver att datorn är på.
+
+Se [Lokal Installation](#lokal-installation) nedan.
+
+---
+
 ## Funktioner
 
 - **Automatisk övervakning**: Hämtar prenumerationsdata från Step In API
@@ -15,6 +37,12 @@ Detta projekt övervakar prenumerationer från Step In Back City och skickar e-p
 - **Prisformatering**: Visar priser korrekt med två decimaler
 
 ## Installation
+
+### GitHub Actions (Rekommenderat)
+
+Se vår kompletta [GitHub Actions Setup Guide](GITHUB_ACTIONS_SETUP.md) för steg-för-steg instruktioner.
+
+### Lokal Installation
 
 1. Klona projektet:
 
@@ -90,25 +118,30 @@ Projektet är designat för att köras med Windows Task Scheduler:
 
 ```
 StepInNotifier/
+├── .github/
+│   └── workflows/
+│       └── daily-check.yml   # GitHub Actions workflow
 ├── src/
 │   ├── config/
 │   │   └── config.js         # Konfigurationsinställningar
 │   ├── services/
 │   │   ├── emailService.js   # Hanterar e-post
-│   │   ├── emailStats.js     # Håller koll på e-poststatistik
 │   │   └── subscriptionService.js # Hanterar prenumerationer
+│   ├── storage/
+│   │   └── gistStorage.js    # GitHub Gist storage (för GitHub Actions)
 │   ├── utils/
 │   │   └── logger.js         # Loggfunktionalitet
 │   └── index.js              # Huvudskript
 ├── data/
-│   ├── previousData.json     # Lagrar tidigare prenumerationsdata
-│   └── emailStats.json       # Lagrar e-poststatistik
+│   ├── previousData.json     # Lagrar tidigare prenumerationsdata (lokal körning)
+│   └── emailStats.json       # Lagrar e-poststatistik (lokal körning)
 ├── logs/
 │   ├── info.log              # Informationsloggar
 │   └── error.log             # Felloggar
-├── .env                      # Miljövariabler
+├── .env                      # Miljövariabler (lokal körning)
 ├── package.json
-└── README.md
+├── README.md
+└── GITHUB_ACTIONS_SETUP.md   # Setup guide för GitHub Actions
 ```
 
 ## Felhantering
@@ -117,5 +150,5 @@ Programmet skickar e-postaviseringar till den konfigurerade administratören (EM
 
 ## Begränsningar
 
-- Programmet har en gräns på 50 e-postmeddelanden per dag för att skydda mot överanvändning
 - Endast prenumerationer från Step In Back City (business unit 2612) övervakas
+- Ett email skickas per körning om ändringar upptäcks

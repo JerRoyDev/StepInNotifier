@@ -1,9 +1,8 @@
 const axios = require('axios');
-const fs = require('fs-extra');
-const path = require('path');
 const config = require('../config/config');
 const logger = require('../utils/logger');
 const { sendEmail } = require('./emailService');
+const gistStorage = require('../storage/gistStorage');
 
 /**
  * Filters subscription data to only include subscriptions for Step In Backcity
@@ -78,17 +77,14 @@ const fetchSubscriptionData = async () => {
 };
 
 /**
- * Loads previous subscription data from file
+ * Loads previous subscription data from Gist
  * @returns {Promise<Array>} Previous subscription data
  */
 const loadPreviousData = async () => {
   try {
-    if (await fs.pathExists(config.dataPath)) {
-      const data = await fs.readJson(config.dataPath);
-      // Filter data to only include Backcity subscriptions
-      return filterBackcitySubscriptions(data);
-    }
-    return [];
+    const data = await gistStorage.readFile('previousData.json');
+    // Filter data to only include Backcity subscriptions
+    return filterBackcitySubscriptions(data);
   } catch (error) {
     logger.error(`Failed to load previous data: ${error.message}`);
     return [];
@@ -96,15 +92,15 @@ const loadPreviousData = async () => {
 };
 
 /**
- * Saves current subscription data to file
+ * Saves current subscription data to Gist
  * @param {Array} data - Current subscription data
  */
 const saveCurrentData = async (data) => {
   try {
     // Filter data to only include Backcity subscriptions before saving
     const backcityData = filterBackcitySubscriptions(data);
-    await fs.writeJson(config.dataPath, backcityData, { spaces: 2 });
-    logger.info(`Saved ${backcityData.length} Backcity subscriptions to file`);
+    await gistStorage.writeFile('previousData.json', backcityData);
+    logger.info(`Saved ${backcityData.length} Backcity subscriptions to Gist`);
   } catch (error) {
     logger.error(`Failed to save current data: ${error.message}`);
   }

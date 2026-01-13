@@ -1,0 +1,60 @@
+name: Daily StepIn Check
+
+# Kör skriptet varje dag kl 08:00 (svensk tid, UTC+1)
+# Cron körs i UTC, så 07:00 UTC = 08:00 svensk tid (vintertid)
+on:
+  schedule:
+    - cron: '0 7 * * *'  # Kl 08:00 svensk tid (vintertid)
+  
+  # Möjliggör manuell körning från GitHub Actions-fliken
+  workflow_dispatch:
+
+jobs:
+  check-subscriptions:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Steg 1: Checka ut koden från repot
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      # Steg 2: Sätt upp Node.js miljö
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # Använd Node.js version 20 (LTS)
+          cache: 'npm'  # Cacha npm dependencies för snabbare körningar
+      
+      # Steg 3: Installera dependencies
+      - name: Install dependencies
+        run: npm ci  # 'npm ci' är snabbare och mer deterministisk än 'npm install'
+      
+      # Steg 4: Kör skriptet
+      - name: Run StepIn check
+        env:
+          # GitHub Secrets - måste konfigureras i repo settings
+          GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          
+          # StepIn API
+          STEPIN_API_ENDPOINT: ${{ secrets.STEPIN_API_ENDPOINT }}
+          STEPIN_BUSINESS_UNIT_ID: ${{ secrets.STEPIN_BUSINESS_UNIT_ID }}
+          
+          # Email settings (Brevo/Sendinblue)
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          EMAIL_ADMIN: ${{ secrets.EMAIL_ADMIN }}
+          BREVO_SMTP_HOST: ${{ secrets.BREVO_SMTP_HOST }}
+          BREVO_SMTP_USER: ${{ secrets.BREVO_SMTP_USER }}
+          BREVO_SMTP_PASS: ${{ secrets.BREVO_SMTP_PASS }}
+        run: npm start
+      
+      # Steg 5: Visa status efter körning
+      - name: Check completion
+        if: success()
+        run: echo "✅ StepIn check completed successfully!"
+      
+      # Steg 6: Hantera fel
+      - name: Handle failure
+        if: failure()
+        run: echo "❌ StepIn check failed! Check the logs above for details."

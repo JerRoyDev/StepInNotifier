@@ -1,10 +1,5 @@
 const nodemailer = require('nodemailer');
 const logger = require('../utils/logger');
-const {
-  canSendEmail,
-  incrementEmailCount,
-  DAILY_LIMIT,
-} = require('./emailStats');
 
 /**
  * Formats price to display with decimal points
@@ -21,14 +16,6 @@ const formatPrice = (amount) => {
  */
 const sendEmail = async (data) => {
   try {
-    // Check if we can send more emails today
-    if (!(await canSendEmail())) {
-      logger.warn(
-        `Skipping email notification - daily limit of ${DAILY_LIMIT} emails reached`
-      );
-      return;
-    }
-
     // Log what data was received for debugging
     logger.info(
       `Email data received - newSubscriptions: ${
@@ -134,9 +121,6 @@ const sendEmail = async (data) => {
     };
 
     await transporter.sendMail(mailOptions);
-
-    // Increment the email counter after successful send
-    await incrementEmailCount();
 
     logger.info(
       `Email notification sent successfully to ${recipients.join(', ')}`

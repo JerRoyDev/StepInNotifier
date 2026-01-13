@@ -1,148 +1,264 @@
-# Step In Prenumerationsövervakare
+# 🏋️ StepIn Notifier
 
-## Översikt
+> Automated subscription monitoring system with cloud-based scheduling and email notifications
 
-Detta projekt övervakar prenumerationer från Step In Back City och skickar e-postaviseringar när ändringar upptäcks. Programmet kontrollerar nya prenumerationer, borttagna prenumerationer och prisändringar.
-
-## 🚀 Körning
-
-Projektet kan köras på två sätt:
-
-### Option 1: GitHub Actions (Rekommenderat)
-Kör automatiskt i molnet utan att din dator behöver vara på.
-
-**📖 [Fullständig GitHub Actions Setup Guide →](GITHUB_ACTIONS_SETUP.md)**
-
-**Fördelar:**
-- ✅ Kör 24/7 utan att din dator är på
-- ✅ Helt gratis
-- ✅ Automatisk schemaläggning
-- ✅ Fullständig logg-historik
-
-### Option 2: Lokalt med Windows Task Scheduler
-Traditionell lösning som kräver att datorn är på.
-
-Se [Lokal Installation](#lokal-installation) nedan.
+Ett serverless övervakningssystem som automatiskt kollar gymabonnemang från StepIn API och skickar notifieringar vid prisändringar eller nya erbjudanden. Byggd med Node.js och GitHub Actions för 24/7 drift utan lokal infrastruktur.
 
 ---
 
-## Funktioner
+## 🎯 Projektöversikt
 
-- **Automatisk övervakning**: Hämtar prenumerationsdata från Step In API
-- **Filtrering**: Fokuserar enbart på Step In Back City's prenumerationer (business unit 2612)
-- **Ändringsavkänning**: Identifierar nya, borttagna och prisändrade prenumerationer
-- **E-postaviseringar**: Skickar detaljerade e-postmeddelanden med ändringar
-- **Felhantering**: Skickar felmeddelanden om API-anrop misslyckas
-- **Säkerhetsgräns**: Begränsar e-postutskick till 50 per dag för att förhindra överanvändning
-- **Prisformatering**: Visar priser korrekt med två decimaler
+StepIn Notifier är ett automatiserat övervakningssystem som:
+- 📊 Hämtar och analyserar prenumerationsdata från StepIn API
+- 🔍 Upptäcker ändringar i realtid (nya/borttagna prenumerationer, prisändringar)
+- 📧 Skickar automatiska e-postaviseringar med strukturerad HTML
+- ☁️ Körs serverless via GitHub Actions (ingen egen server behövs)
+- 💾 Lagrar state i GitHub Gist för persistent data mellan körningar
 
-## Installation
+**Use case:** Personlig notifieringstjänst för att aldrig missa kampanjer eller prisändringar på gymabonnemang.
 
-### GitHub Actions (Rekommenderat)
+---
 
-Se vår kompletta [GitHub Actions Setup Guide](GITHUB_ACTIONS_SETUP.md) för steg-för-steg instruktioner.
+## 🛠️ Tech Stack
 
-### Lokal Installation
+- **Runtime:** Node.js 20
+- **CI/CD:** GitHub Actions (cron scheduling)
+- **Storage:** GitHub Gist API (JSON state persistence)
+- **Email:** Brevo/Sendinblue SMTP
+- **Hosting:** Serverless (GitHub infrastructure)
 
-1. Klona projektet:
-
-   ```
-   git clone https://github.com/användare/StepInNotifier.git
-   cd StepInNotifier
-   ```
-
-2. Installera beroenden:
-
-   ```
-   npm install
-   ```
-
-3. Konfigurera miljövariabler:
-
-   - Kopiera `.env.example` till en ny fil `.env`:
-     ```
-     cp .env.example .env
-     ```
-   - Öppna `.env` och uppdatera värdena med din faktiska konfiguration:
-
-   ```
-   # Brevo SMTP credentials
-   BREVO_SMTP_USER=din-smtp-användare@smtp-brevo.com
-   BREVO_SMTP_PASS=din-smtp-nyckel
-   BREVO_SMTP_HOST=smtp-relay.brevo.com
-
-   # Email settings
-   EMAIL_FROM=avsändare@exempel.com
-   EMAIL_TO=mottagare1@exempel.com,mottagare2@exempel.com
-
-   # Admin email for error notifications
-   EMAIL_ADMIN=admin@exempel.com
-
-   # Step In API settings
-   STEPIN_API_ENDPOINT=https://stepin.brpsystems.com/brponline/api/ver3/products/subscriptions
-   STEPIN_BUSINESS_UNIT_ID=2612
-   ```
-
-   > **OBS!** Kommit aldrig `.env`-filen till versionshanteringen. Den innehåller känslig information.
-
-## Konfiguration
-
-Projektet använder följande konfiguration (src/config/config.js):
-
-- **API-endpoint**: Konfigureras via STEPIN_API_ENDPOINT miljövariabel
-- **Business Unit**: Konfigureras via STEPIN_BUSINESS_UNIT_ID miljövariabel (standard: 2612)
-- **E-postkonfiguration**: SMTP-inställningar konfigureras via miljövariabler
-- **Datalagringsplatser**: Var prenumerationsdata och statistik sparas
-
-## Användning
-
-### Manuell körning
-
+### Dependencies
+```json
+"axios": "^1.6.7",        // HTTP client för API-anrop
+"dotenv": "^16.4.7",      // Miljövariabel-hantering
+"fs-extra": "^11.2.0",    // Filsystem (lokal utveckling)
+"nodemailer": "^6.10.0"   // SMTP email-hantering
 ```
+
+---
+
+## ✨ Features
+
+### Ändringsdetektering
+- ✅ **Nya prenumerationer** - Upptäcker automatiskt nya erbjudanden
+- ✅ **Borttagna prenumerationer** - Notifierar när erbjudanden försvinner
+- ✅ **Prisändringar** - Spårar och rapporterar prisförändringar
+
+### Automatisering
+- ⏰ **Schemalagd körning** - Dagliga automatiska kontroller (kl 08:00)
+- 🔄 **State management** - Persistent lagring mellan körningar via Gist
+- 📧 **Smart notifiering** - Skickar endast email vid faktiska ändringar
+
+### Felhantering
+- 🚨 **API-övervakning** - Automatiska felrapporter vid API-problem
+- 📝 **Strukturerad loggning** - Detaljerade loggar för debugging
+- 🔒 **Säker konfiguration** - Secrets management via GitHub
+
+## 🚀 Quick Start
+
+### 1. Klona projektet
+```bash
+git clone https://github.com/JerRoyDev/StepInNotifier.git
+cd StepInNotifier
+npm install
+```
+
+### 2. Lokal utveckling
+```bash
+# Skapa .env-fil med dina credentials
+cp .env.example .env
+
+# Kör lokalt
+npm start
+```
+
+### 3. Production (GitHub Actions)
+Projektet körs automatiskt i molnet via GitHub Actions.
+
+📖 **[Fullständig deployment-guide →](GITHUB_ACTIONS_SETUP.md)**
+
+**Setup-översikt:**
+1. Pusha kod till GitHub
+2. Konfigurera GitHub Secrets (API-nycklar, SMTP-credentials)
+3. Aktivera GitHub Actions workflow
+4. Systemet körs automatiskt varje dag kl 08:00
+
+---
+
+## 📋 Konfiguration
+
+### Miljövariabler
+
+#### GitHub Secrets (Production)
+```yaml
+GIST_TOKEN              # GitHub Personal Access Token (gist scope)
+GIST_ID                 # Gist ID för state storage
+BREVO_SMTP_USER         # SMTP login
+BREVO_SMTP_PASS         # SMTP API key
+```
+
+#### GitHub Variables (Production)
+```yaml
+STEPIN_API_ENDPOINT     # StepIn API URL
+STEPIN_BUSINESS_UNIT_ID # Business unit filter (2612 = Back City)
+EMAIL_FROM              # Avsändaradress
+EMAIL_TO                # Mottagare (kommaseparerad för flera)
+EMAIL_ADMIN             # Admin email för felrapporter
+BREVO_SMTP_HOST         # SMTP server (smtp-relay.brevo.com)
+```
+
+#### Lokal utveckling (.env)
+```bash
+STEPIN_API_ENDPOINT=https://stepin.brpsystems.com/brponline/api/ver3/products/subscriptions
+STEPIN_BUSINESS_UNIT_ID=2612
+EMAIL_FROM=your@email.com
+EMAIL_TO=recipient@email.com
+EMAIL_ADMIN=admin@email.com
+BREVO_SMTP_HOST=smtp-relay.brevo.com
+BREVO_SMTP_USER=your-smtp-user
+BREVO_SMTP_PASS=your-smtp-password
+```
+
+---
+
+## 💻 Användning
+
+### Lokal körning
+```bash
+# Single run
+npm start
+
+# Med specifik .env
 node src/index.js
 ```
 
-### Schemalagd körning (rekommenderat)
-
-Projektet är designat för att köras med Windows Task Scheduler:
-
-1. Öppna "Task Scheduler" och skapa en ny uppgift
-2. Namnge uppgiften (t.ex. "Step In Prenumerationsövervakning")
-3. Välj ett schema (Dagligt/Veckovis)
-4. Ställ in åtgärd:
-   - Program/skript: `C:\Program Files\nodejs\node.exe` (sökväg till din Node.js installation)
-   - Argument: `path\to\your\project\src\index.js` (path to index.js)
-   - Starta i: `path\to\your\project\` (projektmappen)
-
-## Projektstruktur
+###📁 Projektstruktur
 
 ```
 StepInNotifier/
-├── .github/
-│   └── workflows/
-│       └── daily-check.yml   # GitHub Actions workflow
+├── .github/workflows/
+│   └── daily-check.yml          # GitHub Actions CI/CD workflow
 ├── src/
 │   ├── config/
-│   │   └── config.js         # Konfigurationsinställningar
+│   │   └── config.js            # Centraliserad konfiguration
 │   ├── services/
-│   │   ├── emailService.js   # Hanterar e-post
-│   │   └── subscriptionService.js # Hanterar prenumerationer
+│   │   ├── emailService.js      # Email-hantering (Nodemailer)
+│   │   └── subscriptionService.js # API-integration & diff-logik
 │   ├── storage/
-│   │   └── gistStorage.js    # GitHub Gist storage (för GitHub Actions)
+│   │   └── gistStorage.js       # GitHub Gist client (state persistence)
 │   ├── utils/
-│   │   └── logger.js         # Loggfunktionalitet
-│   └── index.js              # Huvudskript
-├── data/
-│   ├── previousData.json     # Lagrar tidigare prenumerationsdata (lokal körning)
-│   └── emailStats.json       # Lagrar e-poststatistik (lokal körning)
-├── logs/
-│   ├── info.log              # Informationsloggar
-│   └── error.log             # Felloggar
-├── .env                      # Miljövariabler (lokal körning)
+│   │   └── logger.js            # Winston-baserad logging
+│   └── index.js                 # Entry point
+├── data/                        # Lokal state (dev only)
+├── logs/                        # Log-filer (dev only)
+├── .env                         # Lokala miljövariabler (gitignored)
 ├── package.json
 ├── README.md
-└── GITHUB_ACTIONS_SETUP.md   # Setup guide för GitHub Actions
+└── GITHUB_ACTIONS_SETUP.md      # Deployment-guide
 ```
+
+---
+
+## 🏗️ Arkitektur
+
+### Dataflöde
+```
+GitHub Actions (cron trigger)
+    ↓
+Fetch current data (StepIn API)
+    ↓
+Load previous data (GitHub Gist)
+    ↓
+Compare & detect changes
+    ↓
+Send email notification (if changes)
+    ↓
+Save current state (GitHub Gist)
+```
+
+### State Management
+Projektet använder **GitHub Gist** som serverless databas:
+- En privat Gist lagrar `previousData.json`
+- Uppdateras vid varje körning via GitHub API
+- Fungerar som persistent storage mellan workflow-runs
+
+### Email Templates
+HTML-baserade email-templates med strukturerad data:
+- Nya prenumerationer
+- Borttagna prenumerationer
+- Prisändringar (före/efter-jämförelse)
+
+---
+
+## 🔒 Säkerhet
+
+- ✅ Secrets hanteras via GitHub Secrets (ingen känslig data i kod)
+- ✅ Private Gist för state storage
+- ✅ HTTPS för all API-kommunikation
+- ✅ `.env` exkluderas från Git
+
+---
+
+## 🚧 Begränsningar & Scope
+
+- Fokuserar på **Step In Back City** (business unit 2612)
+- Ett email per körning (sammanfattar alla ändringar)
+- Daglig kontroll (kan justeras i workflow-filen)
+- Kräver Brevo/Sendinblue för email (gratis tier OK)
+
+---
+
+## 📊 Exempel Email
+
+<details>
+<summary>Klicka för att se exempel på notifieringsmail</summary>
+
+```html
+Step In Subscription Changes Detected
+Generated at: 2026-01-13 08:00:15
+
+New Subscriptions:
+• Premium Access 12 months (ID: 12345) - 4999.00 SEK
+• Student Pass 6 months (ID: 12346) - 1999.00 SEK
+
+Price Changes:
+• Basic Membership (ID: 10001): 399.00 -> 349.00 SEK
+```
+</details>
+
+---
+
+## 🤝 Bidra
+
+Detta är ett personligt projekt, men förslag är välkomna via Issues!
+
+### Development Setup
+```bash
+git clone https://github.com/JerRoyDev/StepInNotifier.git
+cd StepInNotifier
+npm install
+cp .env.example .env
+# Konfigurera .env med dina credentials
+npm start
+```
+
+---
+
+## 📄 Licens
+
+MIT License - Se [LICENSE](LICENSE) för detaljer.
+
+---
+
+## 👤 Kontakt
+
+**Jerry Ohlson**  
+📧 jerry.ohlson@gmail.com  
+🔗 [GitHub](https://github.com/JerRoyDev)
+
+---
+
+**Built with ❤️ for smarter gym subscription management**
 
 ## Felhantering
 

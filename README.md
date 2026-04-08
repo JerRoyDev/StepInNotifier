@@ -58,7 +58,7 @@ StepIn Notifier är ett automatiserat övervakningssystem som:
 
 ### 1. Klona projektet
 ```bash
-git clone https://github.com/JerRoyDev/StepInNotifier.git
+git clone https://github.com/Jryolsn/StepInNotifier.git
 cd StepInNotifier
 npm install
 ```
@@ -234,7 +234,7 @@ Detta är ett personligt projekt, men förslag är välkomna via Issues!
 
 ### Development Setup
 ```bash
-git clone https://github.com/JerRoyDev/StepInNotifier.git
+git clone https://github.com/Jryolsn/StepInNotifier.git
 cd StepInNotifier
 npm install
 cp .env.example .env
@@ -254,7 +254,7 @@ MIT License - Se [LICENSE](LICENSE) för detaljer.
 
 **Jerry Ohlson**  
 📧 jerry.ohlson@gmail.com  
-🔗 [GitHub](https://github.com/JerRoyDev)
+🔗 [GitHub](https://github.com/Jryolsn)
 
 ---
 
